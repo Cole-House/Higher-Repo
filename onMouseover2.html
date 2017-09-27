@@ -1,0 +1,35 @@
+<html>
+   <head>
+     <style>
+      #answer{
+  width: 200px;
+   height: 200px;
+   background-color:yellow;
+   visibility: hidden;
+ }
+ #theCounter{
+  width:200px;
+  height:200px;
+  background-color:red;
+  float:right;
+}
+   </style>
+    </head>
+  <body>
+      <script>
+      function showAnswer(){
+   document.getElementById('answer').style.visibility= "visible"
+ }
+ i=0
+function runCounter(){
+  i++;
+  document.getElementById('countUp').innerHTML = i;
+}
+       </script>
+      <p onmousedown="showAnswer()">What is the deadliest animal in the world? [Click Here]</p>
+     <div id="answer">
+        this big boii<img src="https://www.konicaminolta.com/kids/endangered_animals/library/field/img/proboscis-monkey_img01-l.jpg">
+      </div>
+   </body>
+ </html>
+ 
