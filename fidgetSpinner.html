@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <style>
+      #spinner{
+  width:500px;
+  height:500px;
+   background-image: url("https://i.ytimg.com/vi/4EzFD80X2wY/maxresdefault.jpg");
+   background-size:cover;
+   border-radius: 25px;
+}
+    </style>
+   </head>
+   <body>
+     <script>
+     i=0
+function runCounter(){
+  i+=10;
+ document.getElementById('spinner').style.transform="rotate("+i+"deg)";
+}
+        </script>
+     <div id="spinner" onmousemove="runCounter()">
+     </div>
+  </body>
+</html>
