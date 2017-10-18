@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+   </head>
+   <body>
+  <script src="script.js"></script>
+     <div id="Room1">
+       <input type="text" id="name1">
+<button onclick="checkIn()">add</button>
+       <ol id="room1"></ol>
+       <input type="text" id="kill">
+       <button onclick="checkOut()">delete</button>
+     </div>
+  </body>
+</html>
+
+i=0;
+function checkIn(){
+//creates a new item for a list in js//
+var newListItem = document.createElement('li');
+//creates new variable in place of input value//
+var answer = document.getElementById('name1').value;
+// creates a new text node from var(answer) and stores it in the variable(newText)//
+var newText = document.createTextNode(answer);
+//attach the new text node to the new element, so the text appends into the list item//
+newListItem.appendChild(newText);
+//find the new position where the new element should be added, which is index position 0 in the ordered list//
+var position = document.getElementsByTagName('ol')[0];
+//inserts the new element into its new position//
+position.appendChild(newListItem);
+ if (i ==2) {
+   return;
+ }
+ else {
+   i++;
+ }
+
+}
+
+function checkOut(){
+  var list= document.getElementById('room1');
+  //I create variable that calls on the ordered list
+  var kill= document.getElementById('kill').value;
+  //taking input from user and calling upon it//
+  list.removeChild(list.childNodes[kill]);
+  //removes input value from ordered list//
+}
