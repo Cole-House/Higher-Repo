@@ -1,0 +1,28 @@
+body{
+  background-image:url(http://images.mudfooted.com/Proboscis-Monkey.jpg);
+  background-size:cover;
+}
+#Room1{
+  width:200px;
+  height:200px;
+  background-color:pink;
+  float:left;
+}
+#Room2{
+  width:200px;
+  height:200px;
+  background-color:pink;
+  float:left;
+}
+#Room3{
+  width:200px;
+  height:200px;
+  background-color:pink;
+  float:left;
+}
+#Room4{
+  width:200px;
+  height:200px;
+  background-color:pink;
+  float:left;
+}
