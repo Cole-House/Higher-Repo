@@ -131,7 +131,8 @@ function cheetos(){
       subTotal * 1.04712;
       //multiplying the subTotal by 1 and then sales tax//
       var grandTotal= subTotal;
-      
+          document.getElementById('subTotal2').innerHTML= subTotals;
+      document.getElementById('grandTotal2').innerHTML= grandTotal;
     }
      }
 
@@ -192,3 +193,20 @@ function cheetos(){
   float:left;
   margin:5px;
 }
+
+     <html>
+  <head>
+    <link rel="stylesheet" href="Restrauant.css" type="text/css">
+    <script src=Restaurant.js></script>
+  </head>
+  <body onload="getItems()">
+    <div id="top">
+     <h1>Guacole's Good Grub</h1>
+     </div>
+     <script src=Restaurant.js></script>
+     <div id="showTotal">
+       <p id="subTotal2"></p>
+       <p id="grandTotal2"></p>
+     </div>
+  </body>
+</html>
