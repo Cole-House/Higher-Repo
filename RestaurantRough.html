@@ -1,0 +1,194 @@
+<html>
+ <head>
+   <link rel="stylesheet" href="Restrauant.css" type="text/css">
+   <script src="Restaurant.js"></script>
+ </head>
+ <body>
+   <div id="top">
+     <h1>Guacole's Good Grub</h1>
+   </div>
+   <div id="item1">
+     <p class="description">Golden Broth Ramen; comes with char-siu, scallions, and boiled Tamago
+     </p>
+     <input type="number" id="order1">
+   <button onclick="ramen()">$13</button>
+   </div>
+    <div id="item2">
+     <p class="description">Loco-Moco; Juicy hamburger with an oozing egg, smothered in gravy all on a bed of rice.
+     </p>
+     <input type="number" id="order2">
+   <button onclick="loco()">$10</button>
+   </div>
+   <div id="item3">
+     <p class="description">Aunt Heather's Fluffy French Toast; French sweet bread battered and drizzled in cinamon, sugar and icing
+     </p>
+     <input type="number" id="order3">
+   <button onclick="toast()">$6</button>
+   </div>
+    <div id="item4">
+     <p class="description">Fresh Ahi Poke Bowl; comes in spicy,oyster sauce and shoyu flavorings w/rice
+     </p>
+     <input type="number" id="order4">
+   <button onclick="poke()">$9</button>
+   </div>
+    <div id="item5">
+     <p class="description">Strawberry Banana Smoothie; NOT VEGAN so it tastes delicious!
+     </p>
+     <input type="number" id="order5">
+   <button onclick="smoothie()">$5</button>
+   </div>
+    <div id="item6">
+     <p class="description">Flaming Hot Cheetos; best snack ever bro, comes with free heartburn
+     </p>
+     <input type="number" id="order6">
+   <button onclick="cheetos()">$7</button>
+   </div>
+   
+   <div id="Receipt">
+     <h3>Receipt</h3>
+     <ul>
+       <li id="ramenDepo"></li>
+      <li id="locoDepo"></li>
+      <li id="toastDepo"></li>
+      <li id="pokeDepo"></li>
+      <li id="smoothieDepo"></li>
+      <li id="cheetosDepo"></li>
+     </ul>
+     <button onclick="checkOut()">Finalize Purchase</button>
+   </div>
+ </body>
+</html>
+
+var total = [];
+// this is a global variable that acts as an array that stores all my combined prices for items ordered; no need JSON items//
+function ramen(){
+  var qty1 = document.getElementById('order1').value;
+  var price1 = (qty1*13);
+  //multiplying the order# by the price of item//
+  total.push(price1);
+  //pushing the price1 for this item to the array 'total'//
+  var receipt1 = (qty1 + " " + "Golden Ramen Ordered");
+  //makes a variable to say how many items you ordered of that food//
+  localStorage.setItem('price', total);
+  //this stores the new data within the total array to local storage//
+  document.getElementById('ramenDepo').innerHTML= receipt1 ;
+  }
+  
+  function loco(){
+  var qty2 = document.getElementById('order2').value;
+  var price2 = (qty2*10);
+  total.push(price2);
+  var receipt2 = (qty2+ " "+ "Loco Mocos Ordered");
+   localStorage.setItem('price', total);
+  document.getElementById('locoDepo').innerHTML= receipt2;
+  }
+
+function toast(){
+  var qty3 = document.getElementById('order3').value;
+  var price3 = (qty3*6);
+  total.push(price3);
+  var receipt3 = (qty3+ " "+ "French Toasts Ordered");
+    localStorage.setItem('price', total);
+  document.getElementById("toastDepo").innerHTML= receipt3;
+  }
+
+function poke(){
+  var qty4 = document.getElementById('order4').value;
+  var price4 = (qty4*9);
+  total.push(price4);
+  var receipt4 = (qty4+ " "+ "Poke Bowls Ordered");
+  localStorage.setItem('price', total);
+  document.getElementById("pokeDepo").innerHTML= receipt4;
+  
+  }
+  
+function smoothie(){
+  var qty5 = document.getElementById('order5').value;
+  var price5 = (qty5*5);
+  total.push(price5);
+  var receipt5 = (qty5+ " "+ "Smoothies Ordered");
+  localStorage.setItem('price', total);
+  document.getElementById("smoothieDepo").innerHTML= receipt5;
+  }
+
+function cheetos(){
+  var qty6 = document.getElementById('order6').value;
+  var price6 = (qty6*7);
+  total.push(price6);
+  var receipt6 = (qty6+ " "+ "Cheetos Ordered");
+  localStorage.setItem('price', total);
+  document.getElementById("cheetosDepo").innerHTML= receipt6;
+  }
+  
+  function getItems(){
+    var items= localStorage.getItem('price');
+    total.push(items);
+    subTotal=0;
+    for(i=0; i<total.length;i++){
+      //for loop is to make sure for each item you order you add one to i till i>array.length//
+      subTotal += total[i];
+   //you are adding each items value to the subtotal tillthere are no more to add//
+      subTotal * 1.04712;
+      //multiplying the subTotal by 1 and then sales tax//
+      var grandTotal= subTotal;
+      
+    }
+     }
+
+#top{
+  width:100%;
+  height:10%;
+  background-color:pink;
+  background-size:cover;
+}
+#item1{
+  background-image:url("https://assets3.thrillist.com/v1/image/1552544/size/tmg-article_default_mobile.jpg");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+#item2{
+  background-image:url("https://i2.wp.com/angsarap.net/wp-content/uploads/2015/01/Loco-Moco-Wide.jpg");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+#item3{
+  background-image:url("http://del.h-cdn.co/assets/17/13/1600x800/landscape-1490973181-delish-churro-french-toast-2.jpg");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+#item4{
+  background-image:url("https://www.justonecookbook.com/wp-content/uploads/2016/05/Poke-Bowl.jpg");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+#item5{
+  background-image:url("http://junglerecipe.com/wp-content/uploads/2015/11/Banana-and-strawberry-smoothie-e1447934957961.png");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+#item6{
+  background-image:url("https://www.incimages.com/uploaded_files/image/970x450/getty_154184096_200013751653767208102_83090.jpg");
+  width:33.334%;
+  background-size:cover;
+  height:200px;
+  float:left;
+}
+.description{
+  background-color:#e0e0d1;
+}
+#Receipt{
+  width:50%;
+  height:25%;
+  float:left;
+  margin:5px;
+}
