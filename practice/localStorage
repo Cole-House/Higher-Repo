@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script>
+      
+      function addNames(){
+        var addname = document.getElementById('name1').value;
+        localStorage.setItem('hello', addname);
+        location.href="practice.html";
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id='name1'>
+    <button onclick='addNames()'>input</button> <br>
+  </body>
+</html>
+
+//page 2
+
+<html>
+  <head>
+  </head>
+  <body onload="hello()">
+    <h1 id="Hello"></h1>
+    <script>
+      function hello(){
+        var x= localStorage.getItem('hello');
+        document.getElementById("Hello").innerHTML= "hello" +" "+ x;
+      }
+      
+    </script>
+  </body>
+</html>
